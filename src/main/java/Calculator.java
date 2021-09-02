@@ -9,10 +9,10 @@ public class Calculator {
             return sum;
         }
             String[] subStr;
-            String delimiter = "[/;,|\n/]"; // Разделитель
+            String delimiter = "[/*%;,|\n/]"; // Разделитель
             subStr = str.split(delimiter); // Разделения строки str с помощью метода split()
             for (int i = 0; i < subStr.length; i++) {
-                if(subStr[i].isEmpty())
+                if(subStr[i].isEmpty()||parseInt(subStr[i])>1000)
                     continue;
                 if (parseInt(subStr[i])<0)
                     throw new Exception("negatives not allowed");
