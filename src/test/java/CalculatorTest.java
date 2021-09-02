@@ -28,8 +28,15 @@ public class CalculatorTest {
     }
 
     @Test
-    public void addingTreeValueCheckWithNewLineBeetweenNumbers(){
+    public void addingTreeValueCheckWithNewLineBetweenNumbers(){
         Calculator c = new Calculator();
         assertEquals(6,c.AddStringDelimeter("1\n2,3"));
     }
+
+    @Test
+    public void addingTreeValueCheckWithMixDelimitersBetweenNumbers(){
+        Calculator c = new Calculator();
+        assertEquals(6,c.AddStringDelimeter(";\n1;2/3"));
+    }
+
         }
