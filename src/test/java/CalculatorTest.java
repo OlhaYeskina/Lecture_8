@@ -1,56 +1,74 @@
 import org.junit.Assert;
 import org.junit.Test;
+
 import static org.junit.Assert.assertEquals;
 
 public class CalculatorTest {
 
     @Test
-    public void addingEmptyStringCheck(){
+    public void addingEmptyStringCheck() {
         Calculator c = new Calculator();
-        assertEquals(0,c.AddStringDelimeter(""));
+        try {
+            assertEquals(0, c.AddStringDelimeter(""));
+        } catch (Exception e) {
+        }
     }
 
     @Test
-    public void addingOneValueCheck(){
+    public void addingOneValueCheck() {
         Calculator c = new Calculator();
-        assertEquals(1,c.AddStringDelimeter("1"));
+        try {
+            assertEquals(1, c.AddStringDelimeter("1"));
+        } catch (Exception e) {
+        }
     }
 
     @Test
-    public void addingTwoValueCheck(){
+    public void addingTwoValueCheck() {
         Calculator c = new Calculator();
-        assertEquals(3,c.AddStringDelimeter("1,2"));
+        try {
+            assertEquals(3, c.AddStringDelimeter("1,2"));
+        } catch (Exception e) {
+        }
     }
 
     @Test
-    public void addingTreeValueCheck(){
+    public void addingTreeValueCheck() {
         Calculator c = new Calculator();
-        assertEquals(6,c.AddStringDelimeter("1,2,3"));
+        try {
+            assertEquals(6, c.AddStringDelimeter("1,2,3"));
+        } catch (Exception e) {
+        }
     }
 
     @Test
-    public void addingTreeValueCheckWithNewLineBetweenNumbers(){
+    public void addingTreeValueCheckWithNewLineBetweenNumbers() {
         Calculator c = new Calculator();
-        assertEquals(6,c.AddStringDelimeter("1\n2,3"));
+        try {
+            assertEquals(6, c.AddStringDelimeter("1\n2,3"));
+        } catch (Exception e) {
+        }
     }
 
     @Test
-    public void addingTreeValueCheckWithMixDelimitersBetweenNumbers(){
+    public void addingTreeValueCheckWithMixDelimitersBetweenNumbers() {
         Calculator c = new Calculator();
-        assertEquals(6,c.AddStringDelimeter("//1,;2/3\n"));
+        try {
+            assertEquals(6, c.AddStringDelimeter("//1,;2/3\n"));
+        } catch (Exception e) {
+        }
     }
 
     @Test
-    public void checkNegativeNumbersAreNotAllowedAndTrowException(){
+    public void checkNegativeNumbersAreNotAllowedAndTrowException() {
         Calculator c = new Calculator();
-        try{
-            assertEquals("negatives not allowed",c.AddStringDelimeter("1,-1"));
+        try {
+            assertEquals("negatives not allowed", c.AddStringDelimeter("1,-1"));
             Assert.fail("Expected exception");
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             String expectedMessage = "negatives not allowed";
-            Assert.assertEquals( "Exception message must be correct", expectedMessage, e.getMessage() );
+            Assert.assertEquals("Exception message must be correct", expectedMessage, e.getMessage());
         }
     }
 
-        }
+}
