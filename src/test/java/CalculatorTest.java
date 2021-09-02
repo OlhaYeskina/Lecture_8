@@ -36,7 +36,7 @@ public class CalculatorTest {
     @Test
     public void addingTreeValueCheckWithMixDelimitersBetweenNumbers(){
         Calculator c = new Calculator();
-        assertEquals(6,c.AddStringDelimeter(";\n1;2/3"));
+        assertEquals(6,c.AddStringDelimeter("//1,;2/3\n"));
     }
 
         }

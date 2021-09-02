@@ -9,9 +9,11 @@ public class Calculator {
             return sum;
         }
             String[] subStr;
-            String delimiter = "[/,|\n/g]"; // Разделитель
+            String delimiter = "[/;,|\n/]"; // Разделитель
             subStr = str.split(delimiter); // Разделения строки str с помощью метода split()
             for (int i = 0; i < subStr.length; i++) {
+                if(subStr[i].isEmpty())
+                    continue;
                 sum+= parseInt(subStr[i]);
             }
 
