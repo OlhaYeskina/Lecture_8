@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -37,6 +38,19 @@ public class CalculatorTest {
     public void addingTreeValueCheckWithMixDelimitersBetweenNumbers(){
         Calculator c = new Calculator();
         assertEquals(6,c.AddStringDelimeter("//1,;2/3\n"));
+    }
+
+    @Test
+    public void checkNegativeNumbersAreNotAllowedAndTrowException(){
+        Calculator c = new Calculator();
+        try{
+            assertEquals("negatives not allowed",c.AddStringDelimeter("1,-1"));
+            Assert.fail("Expected exception");
+        }
+        catch(Exception e){
+            String expectedMessage = "negatives not allowed";
+            Assert.assertEquals( "Exception message must be correct", expectedMessage, e.getMessage() );
+        }
     }
 
         }

@@ -3,7 +3,7 @@ import static java.lang.Integer.parseInt;
 public class Calculator {
 
 
-    public int AddStringDelimeter(String str){
+    public int AddStringDelimeter(String str)  {
         int sum = 0;
         if(str.isEmpty()){
             return sum;
@@ -14,6 +14,8 @@ public class Calculator {
             for (int i = 0; i < subStr.length; i++) {
                 if(subStr[i].isEmpty())
                     continue;
+//                if (parseInt(subStr[i])<0)
+//                    throw new Exception("negatives not allowed");
                 sum+= parseInt(subStr[i]);
             }
 
