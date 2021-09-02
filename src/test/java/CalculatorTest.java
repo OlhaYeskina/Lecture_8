@@ -71,4 +71,13 @@ public class CalculatorTest {
         }
     }
 
+    @Test
+    public void checkIgnoringNumberBigger1000() {
+        Calculator c = new Calculator();
+        try {
+            assertEquals(2, c.AddStringDelimeter("2,1000"));
+        } catch (Exception e) {
+        }
+    }
+
 }
